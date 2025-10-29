@@ -84,9 +84,9 @@ def export_onnx(model, im, file, opset, train=False, dynamic=True, simplify=Fals
 
                 print(f'simplifying with onnx-simplifier {onnxsim.__version__}...')
                 model_onnx, check = onnxsim.simplify(
-                    model_onnx,
-                    dynamic_input_shape=dynamic,
-                    input_shapes={'t0': list(im.shape)} if dynamic else None)
+                    model_onnx)#,
+                    #dynamic_input_shape=dynamic,
+                    #overwrite_input_shapes={'t0': list(im.shape)} if dynamic else None)
                 assert check, 'assert check failed'
                 onnx.save(model_onnx, f)
             except Exception as e:

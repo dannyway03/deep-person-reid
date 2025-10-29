@@ -16,7 +16,8 @@ isort==4.3.21
 imageio
 chardet
 # Export --------------------------------------
-# onnx
+onnx
+pandas
 # onnx-simplified
 # openvino-dev
 # openvino2tensorflow
